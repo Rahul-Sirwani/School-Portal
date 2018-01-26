@@ -1,0 +1,773 @@
+@charset "utf-8";
+/* CSS Document */
+
+.navbar {
+    overflow: hidden;
+    background-color: #000000;
+    position: absolute; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+	left: 0;
+    width: 100%; /* Full width */
+	height: 130px;
+	line-height: 130px; 
+  	vertical-align: middle;
+	color: red;
+  	text-align: center;
+	padding: 35px 35px;
+  	text-decoration: none;
+  	font-family: Impact;
+  	font-size: 80px;
+}
+
+/* Links inside the navbar */
+
+ 
+
+/* Main content */
+.main {
+	padding: 16px;
+    margin-top: 30px; /* Add a top margin to avoid content overlay */
+}
+
+.sidenav { 
+    
+	height: 0px;
+    width: 100%;
+	position: absolute;
+	top:200px;
+    z-index: 1;
+	left: 0;
+    background-color: rgba(255,0,0,0.80);
+    overflow-y: hidden;	
+ 	vertical-align: middle;
+    transition: 0.5s;
+}
+
+.sidenav button {
+	
+    width: 14.25%;
+    float: left;
+    display: inline-block;
+	background-color: rgba(250,235,215,0.00);
+	border: none;
+    color: white;
+  	line-height: 150px; 
+  	vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    font-family: Coolvetica Rg;
+  	font-size: 32px;
+    transition:background-color 0.3s ease;
+	cursor: pointer;
+}
+.sidenav button:hover{
+	background-color: rgba(255,0,0,0.80);
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    margin: 6px 0;
+    transition: 0.4s;
+	z-index: 1;
+	background-color: white;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+.container {
+	position: absolute; 
+	font-size:30px; 
+	top: 140px; 
+	padding: 10px; 
+    display: inline-block;
+    cursor: pointer;
+	z-index: 1;	
+}
+
+#CandA_Add_btn{
+  font: 400 60px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  color: #FFFFFF;
+  position: absolute;
+  right: 300px;
+  transition: 0.3s;
+  top:270px;  	
+    width: 80px;
+	height: 80px;
+    text-decoration: none;
+	border: double;
+    border-radius:50%;
+    background-color:#f44336;
+	
+	
+}
+#CandA_Add_btn:hover {
+    background-color:#FC2111;
+}
+
+#res_Add_btn{
+  font: 400 60px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  color: #FFFFFF;
+  position: absolute;
+  right: 300px;
+  transition: 0.3s;
+  top:270px;  	
+    width: 80px;
+	height: 80px;
+    text-decoration: none;
+	border: double;
+    border-radius:50%;
+    background-color:#f44336;
+	
+	
+}
+#res_Add_btn:hover {
+    background-color:#FC2111;
+}
+
+#games_Add_btn{
+  font: 400 60px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  color: #FFFFFF;
+  position: absolute;
+  right: 300px;
+  transition: 0.3s;
+  top:270px;  	
+    width: 80px;
+	height: 80px;
+    text-decoration: none;
+	border: double;
+    border-radius:50%;
+    background-color:#f44336;
+	
+	
+}
+#games_Add_btn:hover {
+    background-color:#FC2111;
+}
+
+
+#memAdd_btn{
+  margin: 0;
+  
+    transition: 0.3s;
+    text-decoration: none;
+    background-color:#f44336;
+	width: 150px;
+	height: 60px;
+	padding: 20px;
+	
+	color:white;
+	border:none;
+	font-size: 15px;
+	
+}
+#memAdd_btn:hover {
+    background-color:#FC2111;
+}
+
+.addClubs_footer button{
+	font-size: 20px;
+	color: white;
+	background-color: inherit;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.addClubs_footer button:hover{
+	background-color: red;
+}
+
+
+#activities {
+  width: 1000px;
+  padding: 60px;
+  margin-top: 200px;
+  display: "hidden";
+}
+
+#activities  h2 {
+  font: 400 60px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#activities  ul {
+  list-style-type: none;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+#activities  li {
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+  padding-top:10px;
+}
+
+#activities  li:last-child {
+  border: none;
+}
+
+#activities  li button{
+  font: 200 25px/1.5 Helvetica, Verdana, sans-serif;
+  background-color: rgba(250,235,215,0.00);
+  border: none;
+  text-decoration: none;
+  color: #000;
+  text-align: left;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+  display: block;
+  width: 1000px;
+}
+
+#activities  li button:hover {
+  font-size: 35px;
+  background: #f6f6f6;
+}
+
+
+#resources {
+  width: 1000px;
+  padding: 60px;
+  margin-top: 200px;
+  display: "hidden";
+}
+
+#resources  h2 {
+  font: 400 60px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#resources  h3 {
+  font: 400 25px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#resources  p{
+  font: 400 15px/1.5 Helvetica, Verdana, sans-serif;
+  margin-right: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+}
+
+#resources  ul {
+  list-style-type: none;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+#resources  li {
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 2px solid #FC0004;
+  padding-top:10px;
+}
+
+#resources  li:last-child {
+}
+
+#resources  li button{
+  font: 200 25px/1.5 Helvetica, Verdana, sans-serif;
+  background-color: rgba(250,235,215,0.00);
+  border: none;
+  text-decoration: none;
+  color: #000;
+  text-align: left;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+  display: block;
+  width: 1000px;
+}
+
+#resources  li button:hover {
+  font-size: 35px;
+  background: #f6f6f6;
+}
+
+#games {
+  width: 1000px;
+  padding: 60px;
+  margin-top: 200px;
+  display: "hidden";
+}
+
+#games  h2 {
+  font: 400 60px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#games  h3 {
+  font: 400 25px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#games p{
+  font: 400 15px/1.5 Helvetica, Verdana, sans-serif;
+  margin-right: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+}
+
+#games ul {
+  list-style-type: none;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+#games li {
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 2px solid #FF0004;
+  padding-top:10px;
+}
+
+#games li:last-child {
+  
+}
+
+#games li button{
+  font: 200 25px/1.5 Helvetica, Verdana, sans-serif;
+  background-color: rgba(250,235,215,0.00);
+  border: none;
+  text-decoration: none;
+  color: #000;
+  text-align: left;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+  display: block;
+  width: 1000px;
+}
+
+#games li button:hover {
+  font-size: 35px;
+  background: #f6f6f6;
+}
+
+
+.tabcontent {
+    float: left;
+    padding: 10px 80px;
+    width: 100%;
+  	margin-top: 200px;
+	display:none;
+}
+
+.tabcontent h2 {
+  font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.tabcontent h3 {
+  font: 400 25px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  padding: 15px 0;
+}
+
+.tabcontent p {
+  
+  font: 200 15px/1.5 Helvetica, Verdana, sans-serif;
+  text-decoration: none;
+  color: #000;
+  padding: 0 0 15px;
+}
+
+.mySlides {display:none}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 700px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  background-color: rgba(0,0,0,0.8);	
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,1);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor:pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+	font: 400 30px/1.5 Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	position: absolute;
+	padding: 20px;
+}
+
+.card h1{
+	font: 400 30px/1.5 Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+}
+.card h2 {
+	font: 400 20px/1.5 Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    color: grey;
+    font-size: 18px;
+	position: relative;
+}
+
+.return {
+    position: absolute;
+    left: -90px;
+    transition: 0.3s;
+    padding: 15px;
+    width: 100px;
+	height: 30px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    top: 215px;
+    background-color:#f44336;
+}
+.return:hover {
+    left: 0;
+}
+
+.addClubs {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 20px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+#mem_modal{
+	padding: 40px;
+	
+}
+/* Modal Content */
+.addClubs_content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.addClubs_close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.addClubs_close:hover,
+.addClubs_close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.addClubs_header {
+    padding: 2px 16px;
+    background-color: rgba(255,41,41,1.00);
+    color: white;
+}
+
+.addClubs_body {
+	padding: 2px 16px;
+}
+
+.addClubs_footer {
+    padding: 2px 16px;
+    background-color: rgba(255,41,41,1.00);
+    color: white;
+}
+
+.addClubs_items{
+	width: 100%;
+	padding: 12px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	font-family: Times;
+}
+#notes{
+	padding: 60px;
+	margin-top: 200px;
+	display: block;
+}
+.notesPage{
+	padding: 60px;
+}
+.notesDisp h2{
+  font: 400 60px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#searchNotes{
+	width: 400px;
+	font-size: 16px;
+    padding: 12px 20px 12px 40px; 
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+	margin-top: 25px;
+	margin-right: 30px;
+}
+.noteSec{
+  font: 200 25px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 2px solid #ccc;
+  margin-top:10px;
+  padding: 20px 0;
+  padding-bottom: 40px;
+}
+
+#quickNotes{
+	border-top: 2px solid #ccc;
+}
+
+.noteSec h3{
+  font: 200 33px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+#addNote{
+	width: 250px;
+	height: 45px;
+	border: none; 
+	padding: 15px 0;
+	background-color: #2196F3;
+	color: white;
+	font-size:18px;
+	margin: 0 30px;
+}
+
+#addNote:hover{
+	background: #0b7dda;
+}
+
+#insFile{
+	width: 250px;
+	height: 45px;
+	border: none; 
+	padding: 15px 0;
+	background-color: #4CAF50;
+	color: white;
+	margin-left: 25px;
+	font-size:18px;
+	margin: 0 30px;
+}
+
+.insFile:hover{
+	background-color: #46a049;
+}
+
+#addSec{
+	width: 200px;
+	height: 45px;
+	border: none; 
+	padding: 30px;
+	background-color: #f44336;
+	color: white;
+	font-size:20px;
+	margin-top: 25px;
+	line-height: 0px;
+	vertical-align: middle;
+}
+
+#addSec:hover{
+	background: #da190b;
+}
+
+.newNote_header {
+    padding: 2px 16px;
+    background-color: rgba(255,41,41,1.00);
+    color: white;
+}
+
+.newNote_body {
+	padding: 2px 16px;
+}
+
+.newNote_footer {
+    padding: 2px 16px;
+    background-color: rgba(255,41,41,1.00);
+    color: white;
+}
+
+.newNote_items{
+	width: 100%;
+	padding: 12px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	font-family: Times;
+}
+
+.newNote_footer button{
+	font-size: 20px;
+	color: white;
+	background-color: inherit;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.newNote_footer button:hover{
+	background-color: red;
+}
+
+.newSec_header {
+    padding: 2px 16px 20px;
+    background-color: rgba(255,41,41,1.00);
+    color: white;
+}
+
+.newSec_footer {
+    padding: 2px 16px;
+	margin-top: 40px;
+    background-color: rgba(255,41,41,1.00);
+    color: white;
+}
+
+.newSec_footer button{
+	font-size: 20px;
+	color: white;
+	background-color: inherit;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.newSec_footer button:hover{
+	background-color: red;
+}

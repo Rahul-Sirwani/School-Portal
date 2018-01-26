@@ -1,0 +1,10 @@
+﻿{
+  "club0": {
+    "club_name": "Student Council",
+    "club_info": "Blah... Blah... Blah...",
+    "club_images":[ "SC_1.jpg","SC_2.jpg","SC_3.jpg"],
+    "club_members":[
+	{"name": "Rahul Sirwani", "role": "Deputy Prime Minister", "info":"Blah... Blah...", "img": "Mem_1.jpg"}
+     ]
+  }
+}

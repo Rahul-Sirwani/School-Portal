@@ -1,0 +1,491 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Marcellinus App</title>
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<style type="text/css">
+.yo {
+	font-size: 30px
+}
+</style>
+</head>
+
+<body>
+<div id ="yo" class="container" onClick="myFunction()">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div>
+<div class="navbar"><b>St. Marcellinus</b></div>
+<div id="mySidenav" class="sidenav"> 
+  
+  <!--<span style="font-size:30px; color: white; position: fixed; top: 100px; padding: 10px; display: inline-block;  " onClick="openNav()">&#9776 </span> -->
+  <button  id = "bTandU" style = "line-height: 75px;" class="menuItem" onclick="myFunction()"> Tweets & Updates </button>
+  <button  id = "bCandA" style = "line-height: 75px;" class="menuItem" onclick="openMenu('activities')"> Clubs and Sports </button>
+  <button  id = "bNotes" class="menuItem" onclick="openMenu('notes')"> Notes</button>
+  <button  id = "bHome" class = "menuItem" onclick="myFunction()"><img  src="logo.png" width="150" height="150" alt="" style = "position: static"/></button>
+  <button  id = "bCal" class="menuItem" onclick="myFunction()"> Calendar</button>
+  <button  id = "bRes" class="menuItem" onclick="openMenu('resources')"> Resources</button>
+  <button  id = "bGames" class="menuItem" onclick="openMenu('games')"> Games</button>
+</div>
+
+<div id="CandA_modal" class="addClubs">
+ <form id="CandA_modalInp" class="addClubsInp">
+  <div class="addClubs_content">
+    <div class="addClubs_header">
+      <span class="addClubs_close">&times;</span>
+		<h2>Add a Club</h2>
+    </div>
+    <div class="addClubs_body">
+      
+      <label style = "border:none; padding: 1px;" class = "addClubs_items"><b>Activity Name:</b></label>
+      <input  class = "addClubs_items" type="text" placeholder="Enter Name of Activity" name="cName" required>
+
+      <label style = "border:none; padding: 1px;" class = "addClubs_items"><b>Description:</b></label>
+      <input  class = "addClubs_items" type="text" placeholder="Enter Description of Activity:" name="cInfo" required>
+      
+      <label style = "border:none; padding: 1px;" class = "addClubs_items"><b>Add Activity Images:</b></label>
+      	<input class = "addClubs_items"  type="file" name="cImg"  accept="image/*" multiple>
+      	
+      	<div style = "border:none; padding: 10px;" class = "addClubs_items"><button id = "memAdd_btn" class = "addModal">Add Member</button></div>
+     
+    </div>
+    <div class="addClubs_footer">
+      <button type="submit">Add Activity</button>
+    </div>
+  </div>
+
+</form>
+	</div>
+	
+	<div id="mem_modal" class = "addClubs">
+      	<form id="mem_modalInp" class = "addClubs_content">
+   				<div class="addClubs_header">
+     			<span class="addClubs_close">&times;</span>
+      			<h2>Add a Member</h2>
+    			</div>
+    			<div class="addClubs_body">
+     				<label style = "border:none; padding: 1px;" class = "addClubs_items"><b>Member Name:</b></label>
+      				<input class = "addClubs_items" type="text" placeholder="Enter Name of Member" name="mName" required>
+
+     				<label style = "border:none; padding: 1px;" class = "addClubs_items"><b>Member Role:</b></label>
+     			<input class = "addClubs_items" type="text" placeholder="Enter Role of Member:" name="mRole" required>
+     				
+     				
+     				<label style = "border:none; padding: 1px;" class = "addClubs_items"><b>Member Information:</b></label>
+     				<input class = "addClubs_items" type="text" placeholder="Enter a description/quote/message from member :" name="mInfo" required>
+      
+      				<label style = "border:none; padding: 1px;" class = "addClubs_items"><b>Add Member Photo:</b></label>
+      				<input class = "addClubs_items" type="file" name="mImg"  accept="image/*">
+      				
+    			</div>
+    			<div class="addClubs_footer">
+      				<button type="submit">Add Member</button>
+    			</div>
+      	</form>
+		  </div>
+	
+	<div id="newNote" class = "addClubs">
+      	<form id="newNote_inp" class = "addClubs_content">
+   			<div id="newNote_header">
+     			<span style= "color: black; margin-left: 40px; margin-top: 5px; margin-right: 15px;" class="addClubs_close">&times;</span>
+      			<input style = "width: 450px; margin-left:20px; margin-top: 10px;  padding:20px; border: none; border-bottom: 5px solid #ccc; font-size: 25px;" id = "newNote_title" type="text" placeholder="Title" name="nnTitle" required>
+				
+				<div style = "padding: 20px 0 0 2px; float:right"><input type="radio" name="noteType" value="Red"> <div style = "background-color: #f44336; display: inline-block; color: #FFF; width: 40px; height: 40px; text-align:center; line-height:40px; vertical-align:middle; font-size: 20px;"></div></div>
+				
+  				<div style = "padding: 20px 0 0 2px; float:right"><input type="radio" name="noteType" value="Blue"> <div style = "background-color: #2196F3; display: inline-block; color: #FFF; width: 40px; height: 40px; text-align:center; line-height:40px; vertical-align:middle; font-size: 20px;"></div></div>
+				
+  				<div style = "padding: 20px 0 0 2px; float:right"><input type="radio" name="noteType" value="Green"> <div style = "background-color: #4CAF50; display: inline-block; color: #FFF; width: 40px; height: 40px; text-align:center; line-height:40px; vertical-align:middle; font-size: 20px;"></div></div>
+				
+				<div style = "padding: 20px 0 0 2px; float:right"><input type="radio" name="noteType" value="Yellow"> <div style = "background-color: #ff9800; display: inline-block; color: #FFF; width: 40px; height: 40px; text-align:center; line-height:40px; vertical-align:middle; font-size: 20px;"></div></div>
+				
+				<div style = "padding: 20px 0 0 2px; float:right"><input type="radio" name="noteType" value="Grey" checked> <div style = "background-color: #909090; display: inline-block; color: #FFF; width: 40px; height: 40px; text-align:center; line-height:40px; vertical-align:middle; font-size: 20px;"></div></div>
+				
+				<label style = "border:none; padding: 26px 10px 10px 10px; float: right;"><b>Note Type:</b></label>
+			</div>
+			
+    			<div style = "margin-top: 40px; height: 400px;" class="addClubs_body">
+					
+     				<textarea style = "font: Arial; height: 380px; width: 100%; border: none;" id = "newNote_items" cols = "100" rows = "100" placeholder="Click To Edit" name="nnInfo" required></textarea>
+ 
+    			</div>
+    			<div class="newNote_footer">
+      				<button type="submit">Create Note</button>
+    			</div>
+      	</form>
+		  </div>
+	
+	<div id="newNoteImg" class = "addClubs">
+      	<form id="newNoteImg_inp" class = "addClubs_content">
+   			<div id="newNoteImg_header">
+     			<span style= "color: black; margin-left: 40px; margin-top: 5px; margin-right: 15px;" class="addClubs_close">&times;</span>
+      			<input style = "width: 450px; margin-left:20px; margin-top: 10px;  padding:20px; border: none; border-bottom: 5px solid #ccc; font-size: 25px;" id = "newNoteImg_title" type="text" placeholder="Title" name="nniTitle" required>
+				
+				<div style = "padding: 20px 0 0 2px; float:right"><input type="radio" name="noteImgType" value="Red"> <div style = "background-color: #f44336; display: inline-block; color: #FFF; width: 40px; height: 40px; text-align:center; line-height:40px; vertical-align:middle; font-size: 20px;"></div></div>
+				
+  				<div style = "padding: 20px 0 0 2px; float:right"><input type="radio" name="noteImgType" value="Blue"> <div style = "background-color: #2196F3; display: inline-block; color: #FFF; width: 40px; height: 40px; text-align:center; line-height:40px; vertical-align:middle; font-size: 20px;"></div></div>
+				
+  				<div style = "padding: 20px 0 0 2px; float:right"><input type="radio" name="noteImgType" value="Green"> <div style = "background-color: #4CAF50; display: inline-block; color: #FFF; width: 40px; height: 40px; text-align:center; line-height:40px; vertical-align:middle; font-size: 20px;"></div></div>
+				
+				<div style = "padding: 20px 0 0 2px; float:right"><input type="radio" name="noteImgType" value="Yellow"> <div style = "background-color: #ff9800; display: inline-block; color: #FFF; width: 40px; height: 40px; text-align:center; line-height:40px; vertical-align:middle; font-size: 20px;"></div></div>
+				
+				<div style = "padding: 20px 0 0 2px; float:right"><input type="radio" name="noteImgType" value="Grey" checked> <div style = "background-color: #909090; display: inline-block; color: #FFF; width: 40px; height: 40px; text-align:center; line-height:40px; vertical-align:middle; font-size: 20px;"></div></div>
+				
+				<label style = "border:none; padding: 26px 10px 10px 10px; float: right;"><b>Image Type:</b></label>
+			</div>
+			
+    			<div style = "margin-top: 40px; height: 100px;" class="addClubs_body">
+					
+     				<input class = "addClubs_items" type="file" name="nnImage"  accept="file_extension">
+    			</div>
+    			<div class="newNote_footer">
+      				<button type="submit">Add Image</button>
+    			</div>
+      	</form>
+		  </div>
+	
+	
+	<div style = "margin-top: 200px;" id="newSec" class = "addClubs">
+      	<form id="newSec_inp" class = "addClubs_content">
+   			<div id="newSec_header">
+     			<span style= "color: black; margin-left: 40px; margin-top: 5px; margin-right: 15px;" class="addClubs_close">&times;</span>
+      			
+				<input style = "width: 450px; margin-left:20px; margin-top: 10px;  padding:20px; border: none; border-bottom: 5px solid #ccc; font-size: 25px;" id = "newSec_title" type="text" placeholder="Section Title" name="nsTitle" required>
+								
+				<label style = "border:none; font-size: 25px; padding: 26px 10px 10px 10px; float: left;"><b>Section Title:</b></label>
+			</div>
+			
+    			<div class="newSec_footer">
+      				<button type="submit">Create New Section</button>
+    			</div>
+      	</form>
+		  </div>
+
+
+      
+
+<div id = "notes" class = "menuContent">
+	<div id = "disp" class = "notesDisp">
+			<h2 style = "display: inline;">Notes</h2>
+			<input style = "display: inline; float: right;" type="text" id="searchNotes" onkeyup="searchNotes()" placeholder="Search Notes">		
+		<div id = "quickNotes" class= "noteSec">
+			<div>
+				<h3 style = "display: inline;">Quick Notes</h3>
+				<button style = "display: inline; float: right;" id = "insFile">Insert New Image or File</button>
+				<button style = "display: inline; float: right;" id = "addNote">Create New Note</button>
+			</div>
+		</div>
+
+		<button id = "addSec">Add Section</button>
+	</div>
+</div>
+
+<!--	<div id = "CandA" class = "menuContent" onClick="CandA()"></div>-->
+	
+    <div id = "resources" class = "menuContent">
+    <h2>Resources</h2>
+	<button id = "res_Add_btn" class = "addModal"> 
+    	<div style = "text-align: center; position: relative; bottom: 5px; font-size: inherit;">+</div> 
+    </button>
+    
+    <ul>
+      <li>
+        <button class="tablinks" >Equation Calculator
+		  <p><b>Author:</b> Blah.. Blah..</p>
+		  <p><b>Description:</b> Blah.. Blah.. Blah.. Blah.. Blah..</p>
+		  </button>
+      </li>
+      <li>
+        <button class="tablinks">Projectile Motion
+		  	 <p><b>Author:</b> Blah.. Blah..</p>
+		  	 <p><b>Description:</b> Blah.. Blah.. Blah.. Blah.. Blah..</p>
+		  </button>
+      </li>
+      <li>
+        <button class="tablinks" >Calculus Calculator
+		  	 <p><b>Author:</b> Blah.. Blah..</p>
+		  	 <p><b>Description:</b> Blah.. Blah.. Blah.. Blah.. Blah..</p>
+		  </button>
+      </li>
+    </ul>
+	</div>
+	
+	<div id = "games" class = "menuContent">
+    <h2>Games</h2>
+	<button id = "games_Add_btn" class = "addModal"> 
+    	<div style = "text-align: center; position: relative; bottom: 5px; font-size: inherit;">+</div> 
+    </button>
+
+    <ul>
+      <li>
+        <button class="tablinks" >The Grand Heist
+		  <p><b>Author:</b> Blah.. Blah..</p>
+		  <p><b>Description:</b> Blah.. Blah.. Blah.. Blah.. Blah..</p>
+		  </button>
+      </li>
+      <li>
+        <button class="tablinks">2048
+		  	 <p><b>Author:</b> Blah.. Blah..</p>
+		  	 <p><b>Description:</b> Blah.. Blah.. Blah.. Blah.. Blah..</p>
+		  </button>
+      </li>
+      <li>
+        <button class="tablinks" >Frogger
+		  	 <p><b>Author:</b> Blah.. Blah..</p>
+		  	 <p><b>Description:</b> Blah.. Blah.. Blah.. Blah.. Blah..</p>
+		  </button>
+      </li>
+    </ul>
+		</div>
+	
+	<div id = "activities" class = "menuContent">
+    <h2>Clubs</h2>
+	<button id = "CandA_Add_btn" class = "addModal"> 
+    	<div style = "text-align: center; position: relative; bottom: 5px; font-size: inherit;">+</div> 
+    </button>
+    <ul>
+      <li>
+        <button class="tablinks" onclick="openClub('Student Council')">Student Council</button>
+      </li>
+      <li>
+        <button class="tablinks" onclick="openClub('DECA')">DECA</button>
+      </li>
+      <li>
+        <button class="tablinks" onclick="openClub('Computer Science')" >Computer Science</button>
+      </li>
+      <li>
+        <button class="tablinks" onclick="openClub('Sound and Light')" >Sound and Light</button>
+      </li>
+      <li>
+        <button id = "demo" class="tablinks" onclick="openClub('Eco Club')" >Eco Club</button>
+      </li>
+    </ul>
+    <h2>Sports</h2>
+    <ul>
+      <li>
+        <button class="tablinks" onclick="openClub('Student Coouncil')">Hockey</button>
+      </li>
+      <li>
+        <button class="tablinks" onclick="openClub('Student Coouncil')" >Football</button>
+      </li>
+      <li>
+        <button class="tablinks" onclick="openClub('Student Coouncil')" >Basketball</button>
+      </li>
+      <li>
+        <button class="tablinks" onclick="openClub('Student Coouncil')" >Baseball</button>
+      </li>
+      <li>
+        <button class="tablinks" onclick="openClub('Student Coouncil')" >Softball</button>
+      </li>
+    </ul>
+  </div>
+	
+  <div id="Student Council" class="tabcontent">
+    <div  class="return" onClick="openClub('activities')">
+      <div style = "text-align: left; position: absolute; top: 35%; left: 10px;  font-size: 20px">Return</div>
+      <div style = "text-align: right; position: absolute; top: 35%; right: 10px;  font-size: 20px">&#8592;</div>
+    </div>
+    
+    <h2>Student Council</h2>
+    <h3>About The Club</h3>
+    <p>Blah Blah Blah...Blah Blah Blah...Blah Blah Blah...Blah Blah Blah...Blah Blah Blah...Blah Blah Blah...</p>
+    <div class="slideshow-container">
+      <div id="pic1" class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="SC_1.jpg" style="width:100%">
+        <div class="text">Caption Text</div>
+      </div>
+      <div id="pic2" class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="SC_2.jpg" style="width:100%">
+        <div class="text">Caption Two</div>
+      </div>
+      <div id="pic3" class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="SC_3.jpg" style="width:100%">
+        <div class="text">Caption Three</div>
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a> <a class="next" onclick="plusSlides(1)">&#10095;</a> </div>
+    <br/>
+    <div style="text-align:center"> <span class="dot" onclick="currentSlide(1)"></span> <span class="dot" onclick="currentSlide(2)"></span> <span class="dot" onclick="currentSlide(3)"></span> </div>
+    <h3>Meet The Team</h3>
+    <div class="card"> <img src="Mem_1.jpg" style="width:100%">
+      <h1>Rahul Sirwani</h1>
+      <h2>Deputy Prime Minister</h2>
+      <p>Blah... Blah...</p>
+    </div>
+  </div>
+  <div id="DECA" class="tabcontent">
+    <h3>Yeah 2</h3>
+    <p>Paris is the capital of France.</p>
+  </div>
+  <div id="Computer Science" class="tabcontent">
+    <h3>Tokyo</h3>
+    <p>Yeah 3</p>
+  </div>
+
+<script>
+	function openNav() {
+    	document.getElementById("mySidenav").style.height = "150px";
+	}
+
+	function closeNav() {
+    	document.getElementById("mySidenav").style.height = "0px";
+	}
+	
+	function myFunction() {	
+		document.getElementById("yo").classList.toggle("change");
+		
+		if (document.getElementById("mySidenav").style.height == "150px"){
+			closeNav();
+		}
+		else{
+			openNav();
+		}
+	}
+	function openMenu(menuName){
+		var i, menuContent, tabcontent;
+    	menuContent = document.getElementsByClassName("menuContent");
+		for (i = 0; i < menuContent.length; i++) {
+  			menuContent[i].style.display = "none";
+		}
+		tabcontent = document.getElementsByClassName("tabcontent");
+		for (i = 0; i < tabcontent.length; i++) {
+  			tabcontent[i].style.display = "none";
+		}
+		document.getElementById(menuName).style.display = "block";
+		myFunction();
+}
+	
+	function initial(){
+		document.getElementById('bNotes').click();
+		myFunction();
+	}
+	initial();
+	
+	function openClub(clubName){
+		var i, tabcontent;
+    	tabcontent = document.getElementsByClassName("tabcontent");
+		for (i = 0; i < tabcontent.length; i++) {
+  			tabcontent[i].style.display = "none";
+		}
+		
+    	document.getElementById(clubName).style.display = "block";
+	
+		if(clubName != "activities")
+			document.getElementById("activities").style.display = "none";
+}
+	
+	var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+
+
+var CandA_modal = document.getElementById('CandA_modal');
+var mem_modal = document.getElementById('mem_modal');
+
+// Get the button that opens the modal
+var CandA_Add_btn = document.getElementById("CandA_Add_btn");
+var memAdd_btn = document.getElementById("memAdd_btn");
+
+// Get the <span> element that closes the modal
+var CandA_span = document.getElementsByClassName("addClubs_close")[0];
+var mem_span = document.getElementsByClassName("addClubs_close")[1];
+var newNote_span = document.getElementsByClassName("addClubs_close")[2];
+var newNoteImg_span = document.getElementsByClassName("addClubs_close")[3];
+var newSec_span = document.getElementsByClassName("addClubs_close")[4];
+
+CandA_Add_btn.onclick = function() {
+    CandA_modal.style.display = "block";
+}
+
+addSec.onclick = function(){
+	newSec.style.display = "block";
+}
+
+addNote.onclick = function() {
+    newNote.style.display = "block";
+}
+
+insFile.onclick = function() {
+    newNoteImg.style.display = "block";
+}
+
+memAdd_btn.onclick = function() {
+    mem_modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+CandA_span.onclick = function() {
+
+	CandA_modal.style.display = "none";
+}
+
+mem_span.onclick = function() {
+	
+	mem_modal.style.display = "none";
+} 
+
+newNote_span.onclick = function() {
+	
+	newNote.style.display = "none";
+} 
+
+newNoteImg_span.onclick = function() {
+	
+	newNoteImg.style.display = "none";
+} 
+
+newSec_span.onclick = function() {
+	
+	newSec.style.display = "none";
+} 
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == mem_modal) {
+        mem_modal.style.display = "none";
+    }
+	else if (event.target == CandA_modal) {
+        CandA_modal.style.display = "none";
+    }
+	else if (event.target == newNote) {
+        newNote.style.display = "none";
+    }
+	else if (event.target == newNoteImg) {
+        newNoteImg.style.display = "none";
+    }
+	else if (event.target == newSec) {
+        newSec.style.display = "none";
+    }
+}
+
+</script>
+</body>
+</html>
